@@ -208,7 +208,7 @@ body.dark {
     a { color: $white !important;}
     .bottom { background: $dark;}
   }
-  .ui.dream-card>.content>.header { color: $white;}
+  .dream-palette .ui.dream-card>.content>.header { color: $white;}
   .dream-flip-toggle, .theme-item { color: rgba(255,255,255,.87);}
   .dream-palette .card.dream-card.bgc .bottom { background: $white;}
 }
