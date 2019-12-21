@@ -14,6 +14,8 @@ $(document).ready(() => {
   init()
 })
 
+
+
 function preload() {
   if ($('.homepage').length === 0) return
 
@@ -305,7 +307,7 @@ function initPhotoswipe() {
       const size = $(this).data('size').split('x')
       const [width, height] = size
 
-      $(this).data({ index: itemIndex, listIndex: index })
+      $(this).attr({ 'data-index': itemIndex, 'data-list-index': index })
 
       items[index].push({
         src: href,
@@ -317,13 +319,14 @@ function initPhotoswipe() {
 
   $imgs.on('click', function(event) {
     const index = $(this).data('index')
-    const listIndex = $(this).data('listIndex')
+    const listIndex = $(this).data('list-index')
     const options = {
       index: index,
       bgOpacity: 0.7,
       showHideOpacity: true
     }
 
+    if (!items[listIndex]) return
     const pswp = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items[listIndex], options);
     pswp.init()
   })

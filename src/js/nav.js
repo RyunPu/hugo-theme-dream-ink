@@ -2,7 +2,7 @@ function initFilp() {
   const $container = $('.flip-container')
   const heightArr = []
 
-  $container.height(Math.max(...getFilpHeights()))
+  $container.height(getFilpHeights()[0])
 
   $('.dream-flip-toggle').click(() => {
     const [frontHeight, backHeight] = getFilpHeights()
