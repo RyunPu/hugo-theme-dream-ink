@@ -15,8 +15,7 @@ $(document).ready(() => {
 })
 
 function preload() {
-  $('.normal-mask').hide()
-  if (!$('.homepage').length >= 0) return
+  if ($('.homepage').length === 0) return
 
   const initInk = ink()
   const $bar = $('.loading-bar .item')
@@ -280,7 +279,6 @@ function init() {
   })
 
   // 仅在首页，为 '.sre' 元素添加入场动画
-  return
   if ($('.homepage').length > 0) {
     ScrollReveal().reveal($('.sre'), {
       distance: '10px',
