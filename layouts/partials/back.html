@@ -1,0 +1,25 @@
+<article class="dream-back back">
+  <i class="large link hand point left outline icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
+  <div class="flipper-block">
+    {{ range where .Site.RegularPages "Params.layout" "about" }}
+      <div class="ui top attached segment">
+        <h3 class="ui header">{{ .Title }}</h3>
+      </div>
+      <div class="ui attached segment markdown-body">
+        {{ .Content | emojify }}
+      </div>
+    {{ end }}
+
+    <div class="ui attached segment address">
+      {{ partial "address.html" . }}
+    </div>
+  </div>
+</article>
+
+<section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+  {{ if .Site.Copyright }}
+    <footer class="ui segment">
+      {{ .Site.Copyright | safeHTML }}
+    </footer>
+  {{ end }}
+</section>

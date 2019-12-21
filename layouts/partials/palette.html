@@ -1,0 +1,30 @@
+{{ $bc := .Site.Params.backgroundImage }}
+{{ $data := .Data }}
+{{ range .Data.Terms.Alphabetical }}
+  {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column dream-palette">
+  {{ if $bc }}
+    <article class="ui raised card dream-card" style="box-shadow: none;">
+    {{ else }}
+    <article class="ui raised card dream-card">
+    {{ end }}
+      <div class="content">
+        <span class="header" style="color: black !important; margin-top: 0;">
+          <a href="{{ $termLink }}">{{ .Term }}<span class="smaller">({{ .Count }})</span></a>
+        </span>
+      </div>
+      <ul class="ui-list">
+        {{ range .Pages }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+      <div class="content bottom">
+        <div class="meta">
+          
+        </div>
+      </div>
+    </article>
+  </div>
+{{ end }}

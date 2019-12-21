@@ -1,0 +1,40 @@
+{{ define "title" }}
+{{ i18n "archives" }}
+{{ end }}
+
+{{ define "main"}}
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column dream-column flip-container">
+    {{ partial "header.html" . }}
+  </div>
+
+  {{ $bc := .Site.Params.backgroundImage }}
+  {{ range $value := (where .Site.RegularPages "Type" "posts").GroupByDate "2006" }}
+    <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column dream-palette">
+    {{ if $bc }}
+      <article class="ui raised card dream-card" style="box-shadow: none;">
+      {{ else }}
+      <article class="ui raised card dream-card">
+      {{ end }}
+        <div class="content">
+          <span class="header">
+            {{ .Key }}<span class="smaller">({{ len $value.Pages }})</span>
+          </span>
+        </div>
+        <ul class="ui-list">
+          {{ range .Pages }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+        <div class="content bottom">
+          <div class="meta">
+
+          </div>
+        </div>
+      </article>
+    </div>
+  {{ end }}
+</div>
+{{ end }}

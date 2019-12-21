@@ -1,0 +1,57 @@
+{{ define "main"}}
+<div class="homepage item">
+  <section class="introduction ui-centered theme-item">
+    <div class="tac">
+      <h1 class="sre">{{- .Site.Params.author -}}'s blog</h1>
+      <p class="sre">{{- .Site.Params.mottoEn -}}</p>
+    </div>
+  </section>
+
+  <section class="ui-centered theme-item relative">
+    <i class="big long arrow alternate down icon arrow-down animated slideInUp infinite"></i>
+  </section>
+
+  <section>
+    <div class="relative title sre">
+      <h2 class="ui-centered theme-item">最新文章</h2>
+      <h3 class="ui-centered theme-item">Latest Posts</h3>
+      <div class="theme-item item">
+        <a href="/posts" class="ui-right-btn ui-centered" title="See All"><i class="large link hand point right outline icon"></i></a>
+      </div>
+    </div>
+
+    <div class="ui centered relaxed grid dream-grid">
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 8 }}
+      {{ range $paginator.Pages }}
+        <div class="sre sixteen wide mobile eight wide tablet four wide computer column dream-column">
+          {{ .Render "summary" }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section>
+    <div class="ui-centered theme-item">
+      <div class="sre">{{ partial "copyright.html" . }}</div>
+      <div class="sre">{{ partial "address.html" . }}</div>
+    </div>
+  </section>
+</div>
+
+<section class="loading-bar">
+  <div class="item"></div>
+</section>
+
+<section class="loading-mask cd-modal">
+  <div class="item">
+    <div class="loading block"></div>
+  </div>
+</section>
+
+<section class="normal-mask">
+</section>
+
+<section class="cd-transition-layer">
+	<div class="bg-layer item"></div>
+</section>
+{{ end }}

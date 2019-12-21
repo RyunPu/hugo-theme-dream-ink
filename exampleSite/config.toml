@@ -1,0 +1,69 @@
+baseURL = "http://ryunpu.github.io/"
+languageCode = "zh"
+defaultContentLanguage = "zh"
+title = "Ryun's blog"
+theme = "hugo-theme-dream-ink"
+paginate = 10
+
+# copyright = ""
+
+# googleAnalytics = "UA-75787172-1"
+
+# disqusShortname = "ryunpu"
+
+# enableRobotsTXT = true
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+vars = ["title", "publishdate"]
+
+[permalinks]
+  posts = "/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archives = "archives"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  # background = "#F5F5F5"
+  backgroundImage = "/img/bg-white.jpg"
+  linkColor = "seagreen"
+
+  author = "Ryun"
+  # description = ""
+
+  avatar = "/img/avatar.jpeg"
+  motto = "与其感慨路难行，不如马上出发。"
+  mottoEn = "Better to run than curse the road."
+
+  email = "ryunpu@foxmail.com"
+  github = "ryunpu"
+  # linkedin = ""
+  # codepen = ""
+  # stackoverflow = ""
+
+  siteStartYear = 2014
+
+  # favicon = "/favicon.ico"
+
+  # dark mode
+  darkLinkColor = "darkseagreen"
+  darkNav = true
+  dark404Button = true
+
+[blackfriday]
+  hrefTargetBlank = true

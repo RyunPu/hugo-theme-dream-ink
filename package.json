@@ -1,0 +1,25 @@
+{
+  "name": "hugo-theme-dream-ink",
+  "version": "1.0.0",
+  "description": "A Hugo theme based on hugo-theme-dream",
+  "repository": "https://github.com/RyunPu/hugo-theme-dream-ink.git",
+  "author": "Ryun Pu <ryunpu@foxmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "gulp watch",
+    "prod": "gulp prod"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "atomic-algolia": "^0.3.17",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "merge-stream": "^2.0.0",
+    "node-sass": "^4.13.0"
+  }
+}

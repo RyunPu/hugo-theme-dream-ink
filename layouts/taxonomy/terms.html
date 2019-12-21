@@ -1,0 +1,12 @@
+{{ define "title" }}
+{{ i18n "allTags" }}
+{{ end }}
+
+{{ define "main"}}
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column dream-column flip-container">
+    {{ partial "header.html" . }}
+  </div>
+  {{ partial "palette.html" . }}
+</div>
+{{ end }}
