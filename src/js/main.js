@@ -14,8 +14,6 @@ $(document).ready(() => {
   init()
 })
 
-
-
 function preload() {
   if ($('.homepage').length === 0) return
 
@@ -34,13 +32,6 @@ function preload() {
     '/img/bg-white.jpg',
     '/img/default.jpg',
     '/img/Caveat-Regular.ttf',
-    '/img/work/homepage.jpg',
-    '/img/project/self.jpg',
-    '/img/project/mxdia.jpg',
-    '/img/project/lehuomao.jpg',
-    '/img/project/gq.jpg',
-    '/img/project/hyym.jpg',
-    '/img/project/heytea.jpg',
   ]
 
   queue.loadManifest(resources)
@@ -236,8 +227,14 @@ function init() {
     }
   })
 
-  $searchBox.on('keydown', function(e) {
+  $searchBox.keydown(function(e) {
     if (e.which === 27) closeOverlay()
+  })
+
+  $(document).keydown(function(e) {
+    if (e.altKey && e.which === 70) {
+      $('.search-icon').trigger('click')
+    }
   })
 
   $searchIcon.click(function(e) {
@@ -366,5 +363,12 @@ function initInfiniteScroll(msnry) {
       status: '.scroller-status',
       outlayer: msnry
     })
+
+    if (typeof initCover === 'function') {
+      infiniteScroll.on('append', function(response, path, items) {
+        const arr = path.split("/page/")
+        initCover(Number.parseInt(arr[1]))
+      })
+    }
   }
 }

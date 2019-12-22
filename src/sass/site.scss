@@ -162,6 +162,7 @@ input::selection { background: $white;}
 .tal { text-align: left;}
 body.dark .markdown-body pre { background: lighten($dark, 5%);}
 .markdown-body table th:empty { display: none;}
+.markdown-body hr { height: 1px;}
 .meta, .meta *, .ui .header.sub { font-family: Georgia, serif;}
 a.ui.label:hover { text-decoration: none;}
 .dream-single .ui.segment.dream-tags { padding-left: 2rem; padding-right: 2rem;}
