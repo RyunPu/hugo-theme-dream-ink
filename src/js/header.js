@@ -41,7 +41,7 @@ function initAccordion() {
       trigger: '.title .icon'
     },
     onChange() {
-      $('.flip-container').height(Math.max(...getFilpHeights()))
+      $('.flip-container').height(getFilpHeights()[0])
       $('.dream-grid').masonry('layout')
     }
   })
